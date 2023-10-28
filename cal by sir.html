@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="display" style="width: 200px; height: 50px; border: 1px dotted black; margin-bottom: 10px;"></div>
+    <div class="btns">
+        <button onclick="clickBtn(0)">0</button>
+        <button onclick="clickBtn(1)">1</button>
+        <button onclick="clickBtn(2)">2</button>
+        <button onclick="clickBtn(3)">3</button>
+        <button onclick="clickBtn(4)">4</button>
+        <button onclick="clickBtn(5)">5</button>
+        <button onclick="clickBtn(6)">6</button>
+        <button onclick="clickBtn(7)">7</button>
+        <button onclick="clickBtn(8)">8</button>
+        <button onclick="clickBtn(9)">9</button>
+        <button onclick="clickBtn('/')">/</button>
+        <button onclick="clickBtn('*')">*</button>
+        <button onclick="clickBtn('+')">+</button>
+        <button onclick="clickBtn('-')">-</button>
+        <button onclick="displayResult('=')">=</button>
+    </div>
+    <script>
+        var displayValue = 0;
+        var displayNode = document.getElementById('display');
+        
+        const clickBtn = (number) => {
+            displayValue += number
+            displayNode.innerHTML = `<p>${displayValue}</p>`
+            
+            console.log("clicked", displayNode);
+        }
+
+        function displayResult() {
+            var result = eval(displayValue)
+            displayNode.innerHTML = `<p>${result}</p>`
+            console.log("result :" , result);
+        }
+
+
+        //templete literal
+        //when you want to call var in innerHTML
+        // cama.innerHTML = `<p>${variable name}</p>`
+    </script>
+</body>
+
+</html>
